@@ -1,0 +1,3 @@
+<input type="text" (input)="onTextEntered($event)">
+<button [disabled]="isEmpty()" (click)="onClickResetUsername()">Submit</button>
+<p>{{ username }}</p>
