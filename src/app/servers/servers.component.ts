@@ -8,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent {
   serverName ='';
   serverCreated = false;
+  // pasikuriam masyva kuris serverius laikys
+  servers = [];
+  messageIfServersListNotEmpty = '';
 
   onCreateServer(){
     this.serverCreated = true;
+    //jei inputas ne tuscias stringas tada papildik lista 
+    if(this.serverName != ''){
+      this.servers.push(this.serverName);
+    }
+    // jei listas tuscias duoda pranesima
+    if(this.servers.length <= 0) {
+      this.messageIfServersListNotEmpty = 'Servers list is empty !';
+    } else { // jei listas netuscias duoda pranesima
+      this.messageIfServersListNotEmpty = 'Servers listed below :)';
+    }
   }
 
   onUpdateServerStatus(event: any) {

@@ -1,8 +1,9 @@
 <input type="text" (input)="onUpdateServerStatus($event)">
 <button (click)="onCreateServer()">Add server</button>
 <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
-<app-server></app-server>
-<app-server></app-server>
+<p>{{ messageIfServersListNotEmpty }}</p>
+<!-- butinai naudojam zvaigzdute nes manipuliuojam DOM elementu ir kabutese rasomas javascript kodas -->
+<app-server *ngFor="let server of servers"></app-server>
 
 
 
