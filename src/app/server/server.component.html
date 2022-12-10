@@ -1,3 +1,9 @@
-<!-- [ngStyle] naudodami galim rasyti stilius elementams html faile ir musu atveju dinamiskai keicia 
-backgroundo spalva -->
-<p [ngStyle]="{backgroundColor: getColor()}">Server with {{ getServerId() }}, and server is {{ getServerStatus() }}</p>
+<!-- [ngClass]="{online: serverStatus == 'online'}" pirmiausia css klases pavadinimas eina, po to :, po to salyga
+ir jai jinai grazina true pritaiko css klase tam elementui. -->
+<!-- 
+  jei norima tiesiog siaip priskirti sita klase visiems elementams nepriklausomai nuo salygos tada 
+  tiesiog naudojam ngClass="online" be property binding ir be {} skliaustu.
+ -->
+<p [ngStyle]="{backgroundColor: getColor()}"
+[ngClass]="{online: serverStatus == 'online'}"
+>Server with <b ngClass="markBold">{{ getServerId() }}</b>, and server is <b ngClass="markBold">{{ getServerStatus() }}</b></p>
