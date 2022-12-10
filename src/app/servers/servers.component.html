@@ -1,12 +1,8 @@
 <input type="text" (input)="onUpdateServerStatus($event)">
 <button (click)="onCreateServer()">Add server</button>
-<!-- pries ngIf butinai turi buti * arba neveiks -->
-<!-- norint naudoti else prirasom ; else ir i ka kaeiciam (name - is komentaro zemiau) -->
-<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
-<!-- nenaudojant ng-template duodamas error ir jame nurodom kas bus else atveju tokia struktura #name -->
-<ng-template #noServer>
-  <p>No server was created !</p>
-</ng-template>
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<app-server></app-server>
+<app-server></app-server>
 
 
 
