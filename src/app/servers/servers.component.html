@@ -1,16 +1,12 @@
 <input type="text" (input)="onUpdateServerStatus($event)">
-
-<!-- two way binding -->
-<!-- pvz zemiau -->
-<!-- <input type="text" (input)="onUpdateServerStatus($event)"> -->
-<!-- <input type="text" [(ngModel)]="serverName"> -->
-
-<!-- parsing data with event binding pvz zemiau paduodam kaip argumenta $event  -->
-<!-- !!! pasiskaityti apie $event placiau  -->
-<!-- <input type="text" (input)="onUpdateServerStatus($event)" [(ngModel)]="serverName"> -->
-
-<!-- galima event binding'e netik paduoti funkcija bet ir tiesiogiai rasyti koda pvz zemiau. -->
-<!-- <button (click)="serverCreationStatus = 'server was created.'">Add server</button> -->
 <button (click)="onCreateServer()">Add server</button>
-<p>{{ serverName }}</p>
-<p>{{ serverCreationStatus }}</p>
+<!-- pries ngIf butinai turi buti * arba neveiks -->
+<!-- norint naudoti else prirasom ; else ir i ka kaeiciam (name - is komentaro zemiau) -->
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{ serverName }}</p>
+<!-- nenaudojant ng-template duodamas error ir jame nurodom kas bus else atveju tokia struktura #name -->
+<ng-template #noServer>
+  <p>No server was created !</p>
+</ng-template>
+
+
+

@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
-  serverCreationStatus = 'no server is created!';
   serverName ='';
+  serverCreated = false;
 
   onCreateServer(){
-    this.serverCreationStatus = 'server was created. Name is ' + this.serverName;
+    this.serverCreated = true;
   }
 
   onUpdateServerStatus(event: any) {
