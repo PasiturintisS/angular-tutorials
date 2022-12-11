@@ -2,4 +2,4 @@
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-zryahr)
 
-41. Outputting Lists with ngFor
+Section 3: Pirmas projaktas naudojant tai kas ismokta per basic kurso skilti :)
